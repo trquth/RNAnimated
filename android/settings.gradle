@@ -1,0 +1,3 @@
+rootProject.name = 'rnanimation'
+
+include ':app'
