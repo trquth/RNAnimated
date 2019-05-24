@@ -9,9 +9,10 @@
 import React, {Component} from 'react';
 import {
   StyleSheet, Text, View,
-  FlatList, TouchableOpacity
+  FlatList, TouchableOpacity, requireNativeComponent
 } from 'react-native';
 import AnimatedCalendarWrapper from './animated-calendar/AnimatedCalendarWrapper';
+const GenerateThumbnail = requireNativeComponent("GenerateThumbnail")
 
 
 type Props = {};
@@ -53,10 +54,27 @@ export default class App extends Component<Props> {
   };
 
   render() {
+    return <View style={{flex:1}}>
+      <View style={{
+      width: 200, height: 160,
+      justifyContent: 'center', alignItems: 'center', flexDirection: 'column'
+    }}>
+    <GenerateThumbnail
+    url={"https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"} 
+    type="video"/></View>
+    <View style={{
+      width: 200, height: 160,
+      justifyContent: 'center', alignItems: 'center', flexDirection: 'column'
+    }}><GenerateThumbnail
+    url={"https://www.adobe.com/content/dam/acom/en/devnet/acrobat/pdfs/pdf_open_parameters.pdf"} 
+    type="pdf"/></View>
+    </View> 
+    
+   
 
     return (
       <View style={{flex: 1}}>
-        <AnimatedCalendarWrapper>
+        {/* <AnimatedCalendarWrapper>
           <View style={{height: '100%', backgroundColor: 'pink', justifyContent: 'center', alignItems: 'center'}}>
             <TouchableOpacity onPress={() => this.reset()}><Text>TOUCH</Text></TouchableOpacity>
           </View>
@@ -66,7 +84,8 @@ export default class App extends Component<Props> {
           data={this.state.data}
           renderItem={({item}) => <Text style={{margin: 10}}>{`${item.name.first} ${item.name.last}`}</Text>}
           keyExtractor={item => item.email}
-        />
+        /> */}
+        <GenerateVideoThumbnail />
       </View>
 
     );

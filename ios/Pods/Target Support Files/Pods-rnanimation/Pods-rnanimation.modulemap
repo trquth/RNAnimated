@@ -1,0 +1,6 @@
+framework module Pods_rnanimation {
+  umbrella header "Pods-rnanimation-umbrella.h"
+
+  export *
+  module * { export * }
+}
