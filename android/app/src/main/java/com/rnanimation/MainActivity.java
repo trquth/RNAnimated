@@ -1,6 +1,9 @@
 package com.rnanimation;
 
+import android.os.Bundle;
+
 import com.facebook.react.ReactActivity;
+import com.tom_roush.pdfbox.util.PDFBoxResourceLoader;
 
 public class MainActivity extends ReactActivity {
 
@@ -11,5 +14,16 @@ public class MainActivity extends ReactActivity {
     @Override
     protected String getMainComponentName() {
         return "rnanimation";
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        PDFBoxResourceLoader.init(getApplicationContext());
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
     }
 }
