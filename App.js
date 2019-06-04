@@ -55,7 +55,10 @@ export default class App extends Component<Props> {
 
   render() {
     return <View style={{flex:1}}>
-        <GenerateThumbnail style={{flex:1}}/>
+        <GenerateThumbnail
+         style={{flex:1}}
+          url="https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"
+          type="video"/>
     </View>
     // return <View style={{flex:1}}>
     //   <View style={{
